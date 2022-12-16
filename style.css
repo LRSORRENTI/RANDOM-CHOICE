@@ -19,7 +19,8 @@ body {
   margin: 0;
 }
 
-h3 {
+h1,
+p {
   color: rgba(0, 0, 0, 0.723);
   margin: 10px 0 20px;
   text-align: center;
