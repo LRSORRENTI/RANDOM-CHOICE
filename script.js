@@ -31,13 +31,22 @@ const textarea = document.getElementById('textarea')
 textarea.focus()
 // this .focus will auto set the cursor to blinking
 //inside the textarea
-textarea.addEventListener('keyup', () => {
-    createTags(e.target.value)
+textarea.addEventListener('keyup', (e) => {
+    createtags(e.target.value)
     //this is listening for the keyup event
 
 })
 
 function createtags(input){
     //console.log(input)
-    
+    const tags = input.split(',').filter(tag =>
+        tag.trim() !== '').map(tag => tag.trim())
+    tagsEl.innerHTML = ''
+    //console.log(tags)
+    tags.forEach(tag => {
+        const tagEl = document.createElement('span');
+        tagEl.classList.add('tag')
+        tagEl.innerText = tag
+        tagsEl.appendChild(tagEl)
+    })
 }
