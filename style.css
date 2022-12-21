@@ -37,6 +37,9 @@ p {
 .container {
   width: 500px;
 }
+.container p {
+  font-size: 25px;
+}
 #textarea {
   border: none;
   display: block;
