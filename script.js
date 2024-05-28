@@ -27,22 +27,30 @@
 
 const tagsEl = document.getElementById('tags')
 const textarea = document.getElementById('textarea')
-
+const startBtn = document.getElementById('start')
 textarea.focus()
 // this .focus will auto set the cursor to blinking
 //inside the textarea
 textarea.addEventListener('keyup', (e) => {
     createtags(e.target.value)
     //this is listening for the keyup event
-if(e.key === 'Enter'){
-    setTimeout(() => {
-e.target.value = ''
-    }, 10)
-    randomSelect()
-}
+    if (e.key === 'Enter') {
+        setTimeout(() => {
+            e.target.value = ''
+        }, 10)
+        randomSelect()
+    }
 })
 
-function createtags(input){
+startBtn.addEventListener('click', () => {
+    createtags(textarea.value);
+    setTimeout(() => {
+        textarea.value = '';
+    }, 10);
+    randomSelect();
+});
+
+function createtags(input) {
     //console.log(input)
     const tags = input.split(',').filter(tag =>
         tag.trim() !== '').map(tag => tag.trim())
@@ -56,36 +64,36 @@ function createtags(input){
     })
 }
 
-function randomSelect(){
+function randomSelect() {
     const times = 30
     const times100 = times * 100;
-    const interval = setInterval(() =>{
+    const interval = setInterval(() => {
         const randomTag = pickRandomTag()
         highlightTag(randomTag)
 
-        setTimeout(() =>{
+        setTimeout(() => {
             unHighlightTag(randomTag)
         }, 100)
-    }, 100) 
+    }, 100)
 
-    setTimeout(() =>{
-            clearInterval(interval)
-            setTimeout(() => {
+    setTimeout(() => {
+        clearInterval(interval)
+        setTimeout(() => {
             const randomTag = pickRandomTag()
             highlightTag(randomTag)
-            }, 100)
+        }, 100)
     }, times100)
 }
 
-function pickRandomTag(){
+function pickRandomTag() {
     const tags = document.querySelectorAll('.tag')
     return tags[Math.floor(Math.random() * tags.length)]
 }
-function highlightTag(tag){
+function highlightTag(tag) {
     tag.classList.add('highlight')
 }
 
-function unHighlightTag(tag){
+function unHighlightTag(tag) {
     tag.classList.remove('highlight')
 }
 

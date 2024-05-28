@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
-    <title>RANDOM CHOICE PICKER</title>
-  </head>
-  <body>
+    <title>Random Choice Picker</title>
+</head>
+<body>
     <div class="container">
-      <h1 class="animate-character">Random Choice</h1>
+        <h1 class="animate-character">Random Choice Picker</h1>
     </div>
     <div class="container">
-      <p>Enter all choices with commas separating them</p>
-      <br />
-      <p>Like: Heads, Tails, Rock, Paper, Scissors</p>
-      <p>
-        However many choices you want, just remember to separate them with a
-        comma
-      </p>
-      <br />
-      <p id="p">Press enter when you're ready</p>
-      <textarea placeholder="Enter choices here" id="textarea"></textarea>
-      <div id="tags">
-        <span class="tag highlight">Rock</span>
-        <span class="tag">Paper</span>
-        <span class="tag">Scissors</span>
-      </div>
+        <p>Enter all choices with commas separating them:</p>
+        <p class="example">Ex: Heads, Tails, Rock, Paper, Scissors</p>
+        <p>However many choices you want, just remember to separate them with a comma</p>
+        <br />
+        <p>Press Enter or Start when you're ready</p>
+        <button type="button" id="start">Start</button>
+        <textarea placeholder="Enter choices here" id="textarea"></textarea>
+        <div id="tags">
+            <span class="tag highlight">Rock</span>
+            <span class="tag">Paper</span>
+            <span class="tag">Scissors</span>
+        </div>
     </div>
     <script src="/script.js"></script>
-  </body>
+</body>
 </html>

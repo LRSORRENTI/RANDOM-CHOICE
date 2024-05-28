@@ -1,65 +1,98 @@
 @font-face {
-  font-family: Cinzel-Bold;
+  font-family: 'Cinzel-Bold';
   src: url(/fonts/Cinzel-Bold.ttf);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  /* background-color: #a5c9bfe7; */
   background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
-
-  font-family: Cinzel-Bold, sans-serif;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  font-family: 'Cinzel-Bold', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-h1,
-p {
-  color: rgba(0, 0, 0, 0.723);
-  margin: 10px 0 20px;
+h1 {
+  color: #4158d0;
+  font-size: 1.5rem;
   text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .container {
-  width: 500px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
 }
-.container p {
-  font-size: 25px;
+
+p {
+  color: #333;
+  font-size: 1rem;
+  margin: 10px 0;
 }
+
+.example {
+  font-style: italic;
+  color: #333;
+  font-weight: 900;
+}
+
 #textarea {
-  border: none;
-  display: block;
+  border: 2px solid #ccc;
+  border-radius: 5px;
   width: 100%;
   height: 100px;
-  font-family: inherit;
   padding: 10px;
-  margin: 0 0 20px;
-  font-size: 16px;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 .tag {
-  background-color: navajowhite;
-  border-radius: 50px;
-  padding: 10px 20px;
-  margin: 0 5px 10px 0;
-  font-size: 14px;
+  background-color: #f4b6b6;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 1rem;
   display: inline-block;
+  color: #333;
+  
 }
 
 .tag.highlight {
-  background-color: rgb(226, 56, 56);
+  background-color: #e23838;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p, .tag {
+    font-size: 0.9rem;
+  }
 }
