@@ -102,8 +102,9 @@ p {
 }
 
 .tag.highlight {
-  background-color: #38c6e2;
-  color: #fff;
+  /* background-color: #e4fbff; */
+  background-color: #c0ffd6;
+  color: #515151;
 }
 
 @keyframes fadeIn {
